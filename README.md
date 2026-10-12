@@ -13,7 +13,7 @@
 ![Kafka](https://img.shields.io/badge/Apache_Kafka-Events-231F20?style=for-the-badge&logo=apachekafka&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 
-[🌐 Live Demo](#-live-demo) · [🏗️ Architecture](#️-architecture) · [✨ Features](#-key-features) · [🚀 Getting Started](#-getting-started) · [🧪 Testing](#-testing)
+· [🏗️ Architecture](#️-architecture) · [✨ Features](#-key-features) · [🚀 Getting Started](#-getting-started) · [🧪 Testing](#-testing)
 
 </div>
 
