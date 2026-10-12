@@ -34,13 +34,6 @@
 
 ---
 
-## 🌐 Live Demo
-
-| Component | Link |
-|---|---|
-| 🖥️ Frontend | **[Explore CineHub](#)** *(add your Netlify URL here)* |
-
----
 
 ## 🏗️ Architecture
 
