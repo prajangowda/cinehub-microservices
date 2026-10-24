@@ -35,7 +35,7 @@ public class EmailService {
                         <h1>%s</h1>
                         <p>This OTP is valid for 5 minutes.</p>
                         <p>If you did not request this verification, please ignore this email.</p>
-                        <p>Regards,<br>CineHub Team</p>
+                        <p>Regards,<br>CineHub Team </p>
                         """.formatted(otp))
                 .build();
 
