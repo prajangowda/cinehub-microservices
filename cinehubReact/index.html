@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CineHub</title>
+    <link rel="icon" type="image/svg+xml" href="/cinehubFavicon.png" />
+  </head>
+  <body>
+    <script>
+      window.__captureError = (err) => {
+        try {
+          const pre = document.createElement('pre');
+          pre.style.whiteSpace = 'pre-wrap';
+          pre.style.background = '#fff0f0';
+          pre.style.color = '#900';
+          pre.style.padding = '16px';
+          pre.style.position = 'fixed';
+          pre.style.zIndex = 99999;
+          pre.style.left = '12px';
+          pre.style.top = '12px';
+          pre.style.maxWidth = 'calc(100% - 24px)';
+          pre.textContent = String(err);
+          document.body.appendChild(pre);
+        } catch (e) {
+          // ignore
+        }
+      };
+      window.onerror = function(message, source, lineno, colno, error) {
+        window.__captureError(error || message + ' at ' + source + ':' + lineno + ':' + colno);
+      };
+      window.addEventListener('unhandledrejection', function(e) {
+        window.__captureError(e.reason || e);
+      });
+    </script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
