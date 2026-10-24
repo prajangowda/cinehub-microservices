@@ -13,17 +13,20 @@ import org.springframework.stereotype.Service;
 public class EmailService {
 
     private final Resend resend;
+    private final String fromEmail;
 
     public EmailService(
-            @Value("${RESEND_API_KEY}") String apiKey
+            @Value("${resend.api-key}") String apiKey,
+            @Value("${resend.from}") String fromEmail
     ) {
         this.resend = new Resend(apiKey);
+        this.fromEmail = fromEmail;
     }
 
     public void sendOtp(String to, String otp) {
-        log.info("in the email service ");
+
         SendEmailRequest request = SendEmailRequest.builder()
-                .from("onboarding@resend.dev")
+                .from(fromEmail)
                 .to(to)
                 .subject("Your CineHub OTP")
                 .html("""
@@ -31,11 +34,13 @@ public class EmailService {
                         <p>Your OTP is:</p>
                         <h1>%s</h1>
                         <p>This OTP is valid for 5 minutes.</p>
+                        <p>If you did not request this verification, please ignore this email.</p>
+                        <p>Regards,<br>CineHub Team</p>
                         """.formatted(otp))
                 .build();
 
         SendEmailResponse response = resend.emails().send(request);
 
-        System.out.println("Email sent: " + response.getId());
+        log.info("CineHub OTP email accepted by Resend. ID: {}", response.getId());
     }
 }
